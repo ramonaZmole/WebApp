@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Models;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
@@ -14,8 +15,10 @@ namespace WebApplication1.Controllers
 
         public IActionResult GetCities()
         {
-           // ViewBag.
-            return View(_cityRepository.GetCities);
+            // ViewBag.
+            // return View(_cityRepository.GetCities);
+            var cityList = new CityListViewModel(_cityRepository.GetCities);
+            return View(cityList);
         }
     }
 }

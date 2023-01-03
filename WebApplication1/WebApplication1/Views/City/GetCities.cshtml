@@ -1,9 +1,20 @@
-﻿@model System.Collections.Generic.IEnumerable<WebApplication1.Models.City>
+﻿@model WebApplication1.ViewModels.CityListViewModel
 
 @{
     ViewBag.Title = "Travel Planner";
     Layout = "_Layout";
 }
 
-@*<h2>Travel Planner</h2>*@
-<body>@ViewBag.Title</body>
+<h2>@ViewBag.Title</h2>
+<body>
+    @foreach (var city in Model.Cities)
+    {
+        <div>
+            <h3>@city.Name</h3>
+            <h4>@city.ThingsToDo.Name</h4>
+            <h5>@city.ThingsToDo.Description</h5>
+            <h5>@city.ThingsToDo.Price</h5>
+        </div>
+    }
+</body>
+
