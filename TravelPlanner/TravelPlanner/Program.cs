@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
-using WebApplication1.Models;
+using TravelPlanner.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSwaggerGen(c =>

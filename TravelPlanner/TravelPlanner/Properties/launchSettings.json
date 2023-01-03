@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "WebApplication1": {
+    "TravelPlanner": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,

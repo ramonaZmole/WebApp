@@ -1,6 +1,6 @@
-﻿using WebApplication1.Models;
+﻿using TravelPlanner.Models;
 
-namespace WebApplication1.ViewModels
+namespace TravelPlanner.ViewModels
 {
     public class CityListViewModel
     {

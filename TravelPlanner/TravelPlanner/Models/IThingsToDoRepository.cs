@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Models
+﻿namespace TravelPlanner.Models
 {
     public interface IThingsToDoRepository
     {

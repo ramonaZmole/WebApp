@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using WebApplication1.Models;
+﻿using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using TravelPlanner.Models;
 
-namespace WebApplication1.Controllers
+namespace TravelPlanner.Controllers
 {
     public class HomeController : Controller
     {
