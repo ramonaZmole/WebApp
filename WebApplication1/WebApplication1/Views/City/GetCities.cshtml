@@ -1,4 +1,4 @@
-﻿@model WebApplication1.ViewModels.CityListViewModel
+﻿@model CityListViewModel
 
 @{
     ViewBag.Title = "Travel Planner";
@@ -13,7 +13,7 @@
             <h3>@city.Name</h3>
             <h4>@city.ThingsToDo.Name</h4>
             <h5>@city.ThingsToDo.Description</h5>
-            <h5>@city.ThingsToDo.Price</h5>
+            <h5>@city.ThingsToDo.Price.ToString("C")</h5>
         </div>
     }
 </body>
