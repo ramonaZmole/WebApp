@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using TravelPlanner.Models;
@@ -8,11 +9,12 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Travel Planner", Version = "v1" });
     c.SchemaGeneratorOptions = new SchemaGeneratorOptions { SchemaIdSelector = type => type.FullName };
 });
-builder.Services.AddScoped<ICityRepository, MockCityRepository>();
-builder.Services.AddScoped<IThingsToDoRepository, MockThingsToDoRepository>();
+builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IThingsToDoRepository, ThingsToDoRepository>();
 
+builder.Services.AddDbContext<TravelPlannerDbContext>(options =>
+    { options.UseSqlServer(builder.Configuration["ConnectionStrings:TravelPlannerDbContext"]); });
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -36,8 +38,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapDefaultControllerRoute();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
+DbInitializer.Seed(app);
 app.Run();
