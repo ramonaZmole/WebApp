@@ -11,7 +11,7 @@ using TravelPlanner.Models;
 namespace TravelPlanner.Migrations
 {
     [DbContext(typeof(TravelPlannerDbContext))]
-    [Migration("20230104112155_InitialMigration")]
+    [Migration("20230105193046_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -31,6 +31,9 @@ namespace TravelPlanner.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
                         .IsRequired()

@@ -1,4 +1,4 @@
-﻿@model TravelPlanner.ViewModels.CityListViewModel
+﻿@model CityListViewModel
 
 @{
     ViewBag.Title = "Travel Planner";
@@ -10,7 +10,8 @@
     @foreach (var city in Model.Cities)
     {
         <div>
-            <h3>@city.Name</h3>
+            <h3>@city.Id @city.Name</h3>
+            <h3>@city.Description</h3>
             <h4>@city.ThingsToDo.Name</h4>
             <h5>@city.ThingsToDo.Description</h5>
             <h5>@city.ThingsToDo.Price.ToString("C")</h5>

@@ -10,24 +10,33 @@
             {
                 var cities = new List<City>
                 {
-                    new() {  Name = Faker.Address.City(),  ThingsToDo = new ThingsToDo
-                    {
-                        Name = Faker.Company.Name(),
+                    new() {
+                        Name = Faker.Address.City(),
                         Description = Faker.Lorem.Sentence(2),
-                        Price = Faker.RandomNumber.Next(1000)
-                    }},
-                    new() { Name = Faker.Address.City(), ThingsToDo = new ThingsToDo
-                    {
-                        Name = Faker.Company.Name(),
+                        ThingsToDo = new ThingsToDo {
+                             Name = Faker.Company.Name(),
+                             Description = Faker.Lorem.Sentence(2),
+                             Price = Faker.RandomNumber.Next(1000)
+                        }
+                    },
+                    new() {
+                        Name = Faker.Address.City(),
                         Description = Faker.Lorem.Sentence(2),
-                        Price = Faker.RandomNumber.Next(1000)
-                    }},
-                    new() { Name = Faker.Address.City(), ThingsToDo = new ThingsToDo
-                    {
-                        Name = Faker.Company.Name(),
+                        ThingsToDo = new ThingsToDo {
+                             Name = Faker.Company.Name(),
+                             Description = Faker.Lorem.Sentence(2),
+                             Price = Faker.RandomNumber.Next(1000)
+                        }
+                    },
+                    new() {
+                        Name = Faker.Address.City(),
                         Description = Faker.Lorem.Sentence(2),
-                        Price = Faker.RandomNumber.Next(1000)
-                    }}
+                        ThingsToDo = new ThingsToDo {
+                             Name = Faker.Company.Name(),
+                              Description = Faker.Lorem.Sentence(2),
+                              Price = Faker.RandomNumber.Next(1000)
+                        }
+                    }
                 };
                 context.Cities.AddRange(cities);
             }
