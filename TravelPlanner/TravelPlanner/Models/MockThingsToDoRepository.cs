@@ -2,7 +2,7 @@
 {
     public class MockThingsToDoRepository : IThingsToDoRepository
     {
-        public IEnumerable<ThingsToDo> GetThingsToDo =>
+        public IEnumerable<ThingsToDo> GetAllThingsToDo =>
             new List<ThingsToDo>
             {
                 new()

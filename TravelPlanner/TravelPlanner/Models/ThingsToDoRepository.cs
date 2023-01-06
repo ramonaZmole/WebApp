@@ -9,7 +9,7 @@
             _context = context;
         }
 
-        public IEnumerable<ThingsToDo> GetThingsToDo
+        public IEnumerable<ThingsToDo> GetAllThingsToDo
         {
             get
             {

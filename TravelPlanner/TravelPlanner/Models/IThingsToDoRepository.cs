@@ -2,6 +2,6 @@
 {
     public interface IThingsToDoRepository
     {
-        IEnumerable<ThingsToDo> GetThingsToDo { get; }
+        IEnumerable<ThingsToDo> GetAllThingsToDo { get; }
     }
 }

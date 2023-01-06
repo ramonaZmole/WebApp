@@ -4,6 +4,7 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 using TravelPlanner.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Travel Planner", Version = "v1" });

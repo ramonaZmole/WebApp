@@ -1,14 +1,8 @@
-﻿@model CityListViewModel
+﻿@model ThingsToDoListViewModel
 
-@{
-    ViewBag.Title = "Travel Planner";
-    Layout = "_Layout";
-}
-
-<h2>@ViewBag.Title</h2>
 <div class="row row-cols-1 row-cols-md-3 g-4">
     <body>
-        @foreach (var city in Model.Cities)
+        @foreach (var thingsToDo in Model.ThingsToDos)
         {
             <div class="col">
                 <div class="card">
@@ -16,20 +10,18 @@
                         <h4 class="d-grid"></h4>
                         <div class="d-flex justify-content-between mt-2">
                             <h2 class="text-start">
-                                <a asp-controller="City" asp-action="Details" asp-route-id="@city.Id"> @city.Name</a>
+                                <a> @thingsToDo.Name</a>
                             </h2>
-                            <h5 class="text-nowrap"> @city.Id</h5>
+                            <h5 class="text-nowrap"> @thingsToDo.Id</h5>
                         </div>
-                        <h4>@city.Description</h4>
+                        <h4>@thingsToDo.Description</h4>
                         <div class="d-flex justify-content-between mt-2">
                             <h5 class="text-start">
                                 @*  <a asp-controller="City" asp-action="Details" asp-route-id="@city.Id"> @city.Name</a>*@
-                                <a> @city.ThingsToDo.Id</a>
+                                <a> @thingsToDo.Id</a>
                             </h5>
-                            <h3 class="text-nowrap">
-                                <a asp-controller="ThingsToDo" asp-action="GetAllThingsToDo"> @city.ThingsToDo.Description</a>
-                            </h3>
-                            <h3 class="text-nowrap">@city.ThingsToDo.Price.ToString("C")</h3>
+                            <h3 class="text-nowrap"> @thingsToDo.Name </h3>
+                            <h3 class="text-nowrap">@thingsToDo.Price.ToString("C")</h3>
                         </div>
                     </div>
                 </div>
