@@ -13,18 +13,22 @@ namespace TravelPlanner.Controllers
             _cityRepository = cityRepository;
         }
 
-        public IActionResult GetCities()
+        [HttpGet("getCities")]
+        public IEnumerable<City> GetCities()
         {
-            var cityList = new CityListViewModel(_cityRepository.GetCities);
-            return View(cityList);
+            //var cityList = new CityListViewModel(_cityRepository.GetCities);
+            //return View(cityList);
+            return _cityRepository.GetCities.ToList();
         }
 
-        public IActionResult Details(int id)
+        [HttpGet("getDetails")]
+        public City? Details(int id)
         {
-            var city = _cityRepository.GetCities.FirstOrDefault(x => x.Id == id);
-            if (city is null)
-                return NotFound();
-            return View(city);
+            //var city = _cityRepository.GetCities.FirstOrDefault(x => x.Id == id);
+            //if (city is null)
+            //    return NotFound();
+            //return View(city);
+            return _cityRepository.GetCities.FirstOrDefault(x => x.Id == id);
         }
     }
 }

@@ -13,10 +13,12 @@ namespace TravelPlanner.Controllers
             _thingsToDoRepository = thingsToDoRepository;
         }
 
-        public IActionResult GetAllThingsToDo()
+        [HttpGet("getThingsToDo")]
+        public IEnumerable<ThingsToDo> GetAllThingsToDo()
         {
-            var thingToDo = new ThingsToDoListViewModel(_thingsToDoRepository.GetAllThingsToDo);
-            return View(thingToDo);
+            //var thingToDo = new ThingsToDoListViewModel(_thingsToDoRepository.GetAllThingsToDo);
+            //return View(thingToDo);
+            return _thingsToDoRepository.GetAllThingsToDo.ToList();
         }
     }
 }
